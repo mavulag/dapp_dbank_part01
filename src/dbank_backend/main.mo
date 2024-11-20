@@ -32,7 +32,12 @@ actor DBank {
   // Allow users to withdraw an amount from currentValue
   // Decrease the currentValue by the amount
   public func withDraw(amount: Nat) {
-    currentValue -= amount;
-    Debug.print(debug_show(currentValue));
+    let tempValue: Int = currentValue - amount;
+    if (tempValue >= 0) {
+      currentValue -= amount;
+      Debug.print(debug_show(currentValue));
+    } else {
+      Debug.print("Amount too large, currentValue less than zero.");
+    }
   }
 }
