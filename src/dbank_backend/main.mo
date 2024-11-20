@@ -10,8 +10,9 @@
 import Debug "mo:base/Debug";
 
 actor DBank {
-  var currentValue = 300;
-  currentValue := 100;
+  // Orthogonal Persistance
+  stable var currentValue = 300;
+  // currentValue := 100;
 
   let id = 43935151587239489374;
 
